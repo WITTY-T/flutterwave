@@ -1,0 +1,276 @@
+/* Base & Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background-color: #f9fafb;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility / container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+}
+.btn--primary {
+  background-color: #0a0a23;
+  color: #fff;
+}
+.btn--secondary {
+  background-color: #1aab5c;
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  background-color: white;
+}
+.hero__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero__text {
+  flex: 1;
+  max-width: 500px;
+}
+.hero__text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+.hero__highlight {
+  color: #1aab5c;
+  font-style: italic;
+}
+.hero__text p {
+  margin: 24px 0;
+  font-size: 1.125rem;
+  color: #333;
+}
+.hero__image {
+  flex: 1;
+  padding-left: 40px;
+}
+
+/* Steps */
+.steps__title {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 2rem;
+}
+.steps__list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.step {
+  display: flex;
+  align-items: flex-start;
+}
+.step__circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #d1f4e5;
+  color: #1a1a1a;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+.step__info h3 {
+  font-size: 1.125rem;
+  margin-bottom: 8px;
+}
+.step__info p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Marketplace */
+.marketplace {
+  background-color: #fff;
+}
+.marketplace__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.marketplace__media {
+  flex: 1;
+}
+.marketplace__text {
+  flex: 1;
+}
+.marketplace__text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+.marketplace__text .highlight {
+  color: #1aab5c;
+}
+.marketplace__text p {
+  margin-bottom: 24px;
+  color: #333;
+}
+
+/* Features */
+.features__title {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 2rem;
+}
+.features__list {
+  list-style: none;
+  columns: 2;
+  gap: 20px;
+}
+.features__list li {
+  margin-bottom: 16px;
+  font-size: 1.125rem;
+  position: relative;
+  padding-left: 24px;
+}
+.features__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background-color: #00e097;
+  border-radius: 50%;
+}
+
+/* FAQ */
+.faq__title {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 2rem;
+}
+.faq__item + .faq__item {
+  margin-top: 16px;
+}
+.faq__question {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 16px;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: pointer;
+}
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  padding: 0 16px;
+}
+.faq__question[aria-expanded="true"] + .faq__answer {
+  max-height: 300px; /* adjust as needed */
+  padding: 16px;
+}
+
+/* CTA */
+.cta {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+.cta__inner {
+  text-align: center;
+  padding: 60px 0;
+}
+.cta__inner h2 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+.cta__inner p {
+  font-size: 1.125rem;
+  margin-bottom: 24px;
+}
+.cta__inner .btn--primary {
+  background-color: #fff;
+  color: #1a1a1a;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #0a0a23;
+  color: #fff;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive / Media Queries */
+@media (max-width: 992px) {
+  .hero__inner,
+  .marketplace__inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero__image {
+    padding-left: 0;
+    margin-top: 24px;
+  }
+  .marketplace__text {
+    margin-top: 24px;
+  }
+  .features__list {
+    columns: 1;
+  }
+  .steps__list {
+    flex-direction: column;
+  }
+}
+@media (max-width: 600px) {
+  .hero__text h1 {
+    font-size: 2.25rem;
+  }
+  .steps__title,
+  .features__title,
+  .faq__title {
+    font-size: 1.75rem;
+  }
+  .hero__text p,
+  .cta__inner p,
+  .marketplace__text p {
+    font-size: 1rem;
+  }
+  .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
